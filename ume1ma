@@ -1,0 +1,77 @@
+import React from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+
+const Home = () => {
+  return (
+    <div className="min-h-screen bg-gradient-to-b from-black to-[#4b2c3f] text-white">
+      <header className="p-6 text-center">
+        <h1 className="text-5xl font-bold text-[#b11226]">In Her Inner World</h1>
+        <p className="mt-4 text-lg font-light text-[#f3e9dd]">
+          Unveiling thoughts, emotions, and truths.
+        </p>
+      </header>
+
+      <main className="p-6 max-w-5xl mx-auto">
+        <section className="mb-10">
+          <h2 className="text-3xl font-semibold mb-6">Featured Post</h2>
+          <Card className="bg-[#2e1e27] rounded-2xl">
+            <CardContent className="p-6">
+              <h3 className="text-2xl font-bold">Embracing the Shadows</h3>
+              <p className="mt-4 text-[#e8dcd2]">
+                Step into a world where vulnerability meets strength. Discover how
+                embracing the darker sides of life can lead to growth and
+                empowerment.
+              </p>
+              <Button className="mt-4 bg-[#b11226] hover:bg-[#921020]">
+                Read More
+              </Button>
+            </CardContent>
+          </Card>
+        </section>
+
+        <section>
+          <h2 className="text-3xl font-semibold mb-6">Latest Posts</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            {[...Array(4)].map((_, i) => (
+              <Card key={i} className="bg-[#2e1e27] rounded-2xl">
+                <CardContent className="p-6">
+                  <h3 className="text-xl font-bold">Post Title {i + 1}</h3>
+                  <p className="mt-2 text-[#e8dcd2]">
+                    A quick preview of the post content goes here. It’s enough to
+                    catch the reader’s attention.
+                  </p>
+                  <Button className="mt-4 bg-[#b11226] hover:bg-[#921020]">
+                    Read More
+                  </Button>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </section>
+      </main>
+
+      <footer className="p-6 mt-10 bg-[#2e1e27] text-center">
+        <h2 className="text-xl font-semibold mb-4">Stay Connected</h2>
+        <form className="max-w-md mx-auto">
+          <Input
+            className="mb-4 bg-[#4b2c3f] border-none text-white"
+            placeholder="Enter your email"
+          />
+          <Button className="w-full bg-[#b11226] hover:bg-[#921020]">
+            Subscribe
+          </Button>
+        </form>
+        <p className="mt-4 text-sm text-[#f3e9dd]">
+          &copy; {new Date().getFullYear()} In Her Inner World. All rights
+          reserved.
+        </p>
+      </footer>
+    </div>
+  );
+};
+
+export default Home;
+
